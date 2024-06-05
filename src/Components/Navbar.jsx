@@ -1,101 +1,37 @@
-// import React, { useState } from 'react';
+import React from "react";
+import "./Navber.css"; // Import your CSS file
+import Footer from "./Footer"; // Import the Footer component
 
-// const Navbar = () => {
-
-//     const [cardcount, setcardcount] =useState(0);
-
-    
-//     return (
-//         <>
-//         <div>
-//             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//             <div className="container px-4 px-lg-5">
-//                 <a className="navbar-brand" href="#!">Start Bootstrap</a>
-//                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-//                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-//                         <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
-//                         <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
-//                         <li className="nav-item dropdown">
-//                             <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-//                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-//                                 <li><a className="dropdown-item" href="#!">All Products</a></li>
-//                                 <li><hr className="dropdown-divider"/></li>
-//                                 <li><a className="dropdown-item" href="#!">Popular Items</a></li>
-//                                 <li><a className="dropdown-item" href="#!">New Arrivals</a></li>
-//                             </ul>
-//                         </li>
-//                     </ul>
-//                     <form className="d-flex">
-//                         <button className="btn btn-outline-dark" type="submit">
-//                             <i className="bi-cart-fill me-1"></i>
-//                             Cart
-//                             <span className="badge bg-dark text-white ms-1 rounded-pill">{cardcount}</span>
-//                         </button>
-//                     </form>
-//                 </div>
-//             </div>
-//         </nav>
-//         </div>
-//         </>
-//     );
-// };
-
-// export default Navbar;
-
-import React, { useState } from 'react';
-
-const Navbar = () => {
-    const [cartCount, setCartCount] = useState(0);
-
-    const incrementCartCount = () => {
-        setCartCount(prevCount => prevCount + 1);
-    };
-
-    const decrementCartCount = () => {
-        if (cartCount > 0) {
-            setCartCount(prevCount => prevCount - 1);
-        }
-    };
-
-    return (
-        <>
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div className="container px-4 px-lg-5">
-                        <a className="navbar-brand" href="#!">Start Bootstrap</a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                                <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a className="dropdown-item" href="#!">All Products</a></li>
-                                        <li><hr className="dropdown-divider" /></li>
-                                        <li><a className="dropdown-item" href="#!">Popular Items</a></li>
-                                        <li><a className="dropdown-item" href="#!">New Arrivals</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form className="d-flex">
-                                <button className="btn btn-outline-dark" type="button" onClick={incrementCartCount}>
-                                    <i className="bi-cart-fill me-1"></i>
-                                    Card
-                                </button>
-                                <button className="btn btn-outline-dark ms-2" type="button" onClick={decrementCartCount}>
-                                    <i className="bi-cart-fill me-1"></i>
-                                     Remove
-                                </button>
-                                <span className="badge bg-dark text-white ms-1 rounded-pill">{cartCount}</span>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </>
-    );
+const Navbar = ({ cartItemCount }) => {
+  return (
+    <div className="navbar">
+      {/* Navbar container */}
+      <div className="container">
+        <div className="logo">MY SHOPPIFY</div>
+        {/* Cart section */}
+        <div className="cart">
+          <button className="cart-button">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-name">Cart</span>
+            <span className="cart-count">{cartItemCount}</span>
+          </button>
+        </div>
+      </div>
+      {/* Header background */}
+      <div className="header-bg">
+        <div className="container">
+          <div className="header-text">
+            <h1 className="header-title">Nila Comics Presents</h1>
+            <p className="header-subtitle">Ponniyin Selvan Comics Series</p>
+          </div>
+        </div>
+      </div>
+      {/* Footer section */}
+      <div>
+        <Footer />
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

@@ -1,10 +1,11 @@
 import React from 'react';
+import "./Header.css";
 
 const Header = () => {
     return (
         <>
         <div>
-            <header className="bg-dark py-5">
+            <header className="bg-dark py-5 header-fullwidth">
             <div className="container px-4 px-lg-5 my-5">
                 <div className="text-center text-white">
                     <h1 className="display-4 fw-bolder">Shop in style</h1>
