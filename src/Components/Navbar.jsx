@@ -7,7 +7,7 @@ const Navbar = ({ cartItemCount }) => {
     <div className="navbar">
       {/* Navbar container */}
       <div className="container">
-        <div className="logo">MY SHOPPIFY</div>
+        <div className="logo">My Book shop</div>
         {/* Cart section */}
         <div className="cart">
           <button className="cart-button">
@@ -21,8 +21,8 @@ const Navbar = ({ cartItemCount }) => {
       <div className="header-bg">
         <div className="container">
           <div className="header-text">
-            <h1 className="header-title">Nila Comics Presents</h1>
-            <p className="header-subtitle">Ponniyin Selvan Comics Series</p>
+            <h1 className="header-title">Suriya edite code </h1>
+            <p className="header-subtitle">Ponniyin Selvan  Series</p>
           </div>
         </div>
       </div>
